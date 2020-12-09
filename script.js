@@ -20,15 +20,15 @@ var characters = '.,~!@#$%^&*()+={}[]<>?';
 var emptyPassword = '';
 
 //function that prompts the user to make choices
-function prompts (){
+function userChoices (){
 
   var upperCaseChoice = confirm("Do you want uppercase letters in your password?");
 
   var lowerCaseChoice = confirm("Do you want lowercase letters in your password?");
 
-  var numberChoice = confirm("Do you want numbers in your password");
+  var numberChoice = confirm("Do you want numbers in your password?");
 
-  var specialCharacterChoice = confirm("Do you want special characters in your password");
+  var specialCharacterChoice = confirm("Do you want special characters in your password?");
 
 //adds strings together based on the user choices
     if (upperCaseChoice){
@@ -47,12 +47,10 @@ function prompts (){
       emptyPassword += characters;
     }
 
-  console.log(emptyPassword);
-
   //if the user doesn't make any choices, they receive an alert message and the function starts over
   if (!upperCaseChoice && !lowerCaseChoice  && !specialCharacterChoice  && !numberChoice){
     alert("You must choose at least one type of character. Try again!");
-    prompts();
+    userChoices();
   }
   
 }
@@ -60,7 +58,7 @@ function prompts (){
 function generatePassword(){
 
   //prompts user to choose the password length
-  var passwordLength = prompt("How long do you want your password to be? Please choose between 8 and 128 characters.");
+  var passwordLength = prompt("How long do you want your password to be? Please choose a value between 8 and 128.");
 
   //gives the user an alert message if they pick an incorrect value and the function starts over
   if (passwordLength < 8 || passwordLength > 128){
@@ -68,7 +66,7 @@ function generatePassword(){
     generatePassword();
   }
   //calls the prompt function
-   prompts();
+   userChoices();
 
   //creates new string variable to put final password in
   var password = '';
