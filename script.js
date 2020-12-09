@@ -32,19 +32,19 @@ function prompts (){
 
 //adds strings together based on the user choices
     if (upperCaseChoice){
-        emptyPassword = emptyPassword + upperCase;
+        emptyPassword += upperCase;
       
     }
     if (lowerCaseChoice){
-        emptyPassword = emptyPassword + lowerCase;
+        emptyPassword += lowerCase;
 
     }
     if (numberChoice){
-        emptyPassword = emptyPassword + numbers;
+        emptyPassword += numbers;
 
     }
     if (specialCharacterChoice){
-      emptyPassword = emptyPassword + characters;
+      emptyPassword += characters;
     }
 
   console.log(emptyPassword);
@@ -60,7 +60,22 @@ function prompts (){
 function generatePassword(){
 
   //prompts user to choose the password length
+  var passwordLength = prompt("How long do you want your password to be? Please choose between 8 and 128 characters.");
 
+  if (passwordLength < 8 || passwordLength > 128){
+    alert("Incorrect value. Please choose a number between 8 and 128.");
+    generatePassword();
+  }
+   prompts();
+
+  var password = '';
+
+  for (var i =0; i < passwordLength; i++){
+    var randomIndex = Math.floor(Math.random() * emptyPassword.length);
+    var randomizedCharacter = emptyPassword[randomIndex];
+    password += randomizedCharacter;
+  }
+  return password;
   
 }
 
