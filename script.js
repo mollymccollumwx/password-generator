@@ -51,7 +51,7 @@ function prompts (){
 
   //if the user doesn't make any choices, they receive an alert message and the function starts over
   if (!upperCaseChoice && !lowerCaseChoice  && !specialCharacterChoice  && !numberChoice){
-    alert("You must choose at least one.");
+    alert("You must choose at least one type of character. Try again!");
     prompts();
   }
   
@@ -62,24 +62,26 @@ function generatePassword(){
   //prompts user to choose the password length
   var passwordLength = prompt("How long do you want your password to be? Please choose between 8 and 128 characters.");
 
+  //gives the user an alert message if they pick an incorrect value and the function starts over
   if (passwordLength < 8 || passwordLength > 128){
     alert("Incorrect value. Please choose a number between 8 and 128.");
     generatePassword();
   }
+  //calls the prompt function
    prompts();
 
+  //creates new string variable to put final password in
   var password = '';
 
-  for (var i =0; i < passwordLength; i++){
+  //uses a for loop to create a randomized password based on user selections of length and type of character
+  for (var i = 0; i < passwordLength; i++){
     var randomIndex = Math.floor(Math.random() * emptyPassword.length);
     var randomizedCharacter = emptyPassword[randomIndex];
     password += randomizedCharacter;
   }
+  //new password
   return password;
   
 }
-
-
-
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
