@@ -1,7 +1,5 @@
 # Password Generator
 
-badges
-
 This webpage generates a random password after asking the user for both the desired length of the password and the types of characters in the password. The randomization creates a strong password that provides greater security to protect sensitive data. 
 
 The HTML/CSS was provided by GA Tech Coding Bootcamp. The developer was asked to construct a JavaScript file that did the following:
