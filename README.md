@@ -2,18 +2,36 @@
 
 badges
 
+This webpage generates a random password after asking the user for both the desired length of the password and the types of characters in the password. The randomization creates a strong password that provides greater security to protect sensitive data. 
 
+The HTML/CSS was provided by GA Tech Coding Bootcamp. The developer was asked to construct a JavaScript file that did the following:
+
+* Display a series of prompts for the user to pick password criteria (length and types of characters)
+* Validate the input selections
+* Randomly generate the password based on the user selection and display the new password on the page
 
 ## Installation
 
 ---
-github and deployed website
+The code for this webpage can be found at [Github](https://github.com/mollymccollumwx/password-generator). The [deployed website](https://mollymccollumwx.github.io/password-generator/) features a simple design and singular purpose to generate a random password. 
 
 ## Usage
 
 ---
+![homepage](./images/homepage.png)
 
-screenshots
+After pressing generate, the user is prompted for a desired password length between 8-128 characters. The user was also prompted to choose again if they picked a value below 8 or above 128.
+
+![User is prompted to choose the password length](./images/lengthprompt.png)
+
+The user was then provided with a series of confirms to determine what type of characters they wanted in their password (uppercase, lowercase, numbers, or special characters). If the user did not make any choices, they were alerted that they needed to pick at least one. 
+
+![User is prompted to pick character types](./images/characterprompt.png)
+
+
+Based on the user selection, the password was then generated in a random order and displayed on the screen. 
+
+![A randomly generated password displays on screen](./images/password.png)
 
 ## Credits
 
